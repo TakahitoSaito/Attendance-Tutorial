@@ -13,11 +13,11 @@ module SessionsHelper
   end  
   
   # 永続的セッションを破棄します
-  def forget # Userモデルを参照
+  def forget(user)
     user.forget # Userモデル参照
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
-  end  
+  end
   
   
   # セッションと@current_userを破棄します
